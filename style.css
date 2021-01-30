@@ -1,0 +1,72 @@
+body {
+    background-color:rgb(220,220,220);
+}
+
+.navbar {
+    background-color: black;
+
+}
+.navbar-toggler-icon{
+    color: #fff;
+ 
+}
+.fa-bars{
+    color: #fff;
+    font-size: 30px !important;
+}
+#card {
+    color:black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    padding: 2px 2px 8px 4px;
+     box-shadow: 2px 2px 0.6;
+
+    /* background-color: rgba(0, 132, 255, 0.644); */
+} 
+
+textarea{
+    border: transparent;
+    border-bottom: 1px solid black;
+}
+
+.notecard .cards{
+    max-height: fit-content !important;
+    background-color: rgba(170, 207, 241, 0.644);
+}
+#target{
+    padding: 2px;
+    text-align:start;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.head {
+
+    font-size: 3rem;
+    align-items: center;
+    text-align: center;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#addtxt{
+    background-color:#fff;
+    font-weight: bold;
+}
+#cb{
+    background-color:#fff;
+    border: none;
+}
+#addbtn{
+    background-color: lightblue;
+}
+.btn-primary{
+     padding: 0px 5px;
+     margin: 0px 5px;
+}
