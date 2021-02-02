@@ -16,7 +16,10 @@ addbtn.addEventListener("click", function (e) {
     var current_date=date.getDate();
     const month=date.toLocaleString('default', { month: 'short' });
     const year=date.getFullYear();
-    let dateformat=`${current_date}/${month}/${year}`
+    const time=date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+         let dateformat=`${current_date}/${month}/${year}  ${time}`
+
         let myobj={
             title:addtitle.value,
             text:addtxt.value,
