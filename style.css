@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(220,220,220);
+    background-color:#F8F9FA;
 }
 
 .navbar {
@@ -21,10 +21,14 @@ body {
     font-size: normal;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    padding: 2px 2px 8px 4px;
-     box-shadow: 2px 2px 0.6;
+    /* padding: 2px 2px 8px 4px;
+     box-shadow: 2px 2px 0.6; */
 
     /* background-color: rgba(0, 132, 255, 0.644); */
+} 
+.card-body{
+    background-color:#F8F9FA;
+    border: 1px solid rgb(220,220,220) ;
 } 
 
 textarea{
@@ -33,8 +37,10 @@ textarea{
 }
 
 .notecard .cards{
-    max-height: fit-content !important;
-    background-color: rgba(170, 207, 241, 0.644);
+    max-height: 500px;
+    background-color:#F8F9FA;
+    text-overflow:auto;
+    
 }
 #target{
     padding: 2px;
@@ -60,13 +66,14 @@ textarea{
     font-weight: bold;
 }
 #cb{
-    background-color:#fff;
+    background-color:#F8F9FA;
     border: none;
 }
 #addbtn{
     background-color: lightblue;
 }
-.btn-primary{
+.editdelete{
      padding: 0px 5px;
      margin: 0px 5px;
+     margin-bottom: 5px 5px;
 }
