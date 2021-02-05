@@ -49,13 +49,15 @@ function showNotes() {
         html += ` <div class="notecard my-2 mx-2 card"  style = "width: 18rem;">
             <div class ="cards" id="card">
             <p class="font-weight-light">${element.setdate}</p>
+
                 <h3 class="card-title class="contentEdit" id="myh"  onfocusout="myFunction1()">${element.title} </h3>
                 <p class="card-text" id="myp"  onfocusout="myFunction2()" >${element.text}  </p>
-                <button id="contentedit" onclick="editFunction()" class="btn btn-primary">Edit Note</a>
-                <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</a>
+ 
+                <button id="delete" onclick="deleteNote(${index})" class="btn btn-danger editdelete">Delete Note</a>
+              <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete">Edit Note</a>
             </div>
         </div>`;
-        
+                    //    <button id="edit" onclick="editNote(${index})" class="btn btn-danger">Edit Note</a>
 
 
 
@@ -69,23 +71,46 @@ function showNotes() {
     }
 
 }
+function editNote(index) {
 
-function editFunction(){
+
+
+    let notes = localStorage.getItem("notes");
+    if (notes == null) {
+        notesObj = [];
+    } else {
+        notesObj = JSON.parse(notes);
+    }
+    // console.log(notesObj[index].title)
+    let addtxt = document.getElementById("addtxt");
+    let addtitle=document.getElementById("addtitle");
+    // addtitle.value=notesObj[index].title;
+
     
-    document.getElementById("myp").contentEditable=true;
-    document.getElementById("myh").contentEditable=true;
+    let newtitle=addtitle.value;
+    let newtext=addtxt.value;
+    if(newtitle!=""){
+         notesObj[index].title=newtitle;
+    }
+    if(newtext!=""){
+            notesObj[index].text=newtext;
 
-    // document.getElementsByClassName("card-text").contentEditable=true;
+    }
+   
+
+    console.log(notesObj[index].title)
+    
+     
+
+    // notesObj.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    addtitle.value=""
+    addtxt.value=""
+    showNotes();
+
 }
 
-function myFunction1(){
-    // document.getElementById("myp").contentEditable=false;
-    document.getElementById("myh").contentEditable=false;
-}
-function myFunction2(){
-    document.getElementById("myp").contentEditable=false;
-    // document.getElementById("myh").contentEditable=false;
-}
+
 function deleteNote(index) {
 
 
@@ -96,8 +121,12 @@ function deleteNote(index) {
     } else {
         notesObj = JSON.parse(notes);
     }
+ 
+     
+
     notesObj.splice(index, 1);
     localStorage.setItem("notes", JSON.stringify(notesObj));
+
     showNotes();
 
 }
@@ -109,15 +138,56 @@ search.addEventListener("input",function(){
     console.log(inputtxt);
     let notecard = document.getElementsByClassName('notecard');
     Array.from(notecard).forEach(function(element){
-        let cardtxt = element.getElementsByTagName("p")[0].innerText;
+        let cardtxt = element.getElementsByTagName("h3")[0].innerText;
+        //    let cardtxt   element.getElementsByClassName("card-title")[0].innerText;
         if (cardtxt.includes(inputtxt)) {
             element.style.display = "block";
-
         }
         else {
             element.style.display = "none";
         }
     })
 });
+
+let darkMode=false;
+// default system setting
+if(window.matchMedia('(perfers-color-scheme:dark)').matches){
+    darkMode=true;
+}
+
+// preference from localStorage
+if(localStorage.getItem('theme')=='dark'){
+    darkMode=true;
+}
+else{
+    darkMode=false;
+}
+if(darkMode){
+    document.body.classList.toggle('dark');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+let themeToggle=document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');
+    // if(darkMode==1){
+    //     themeToggle.innerHTML='Light';
+    // }
+    // else{
+    //     // themeToggle.innerHTML='Dark';
+    // }
+})
+})
+function myFunction12(){
+    let themeToggle=document.getElementById("theme-toggle");
+    if(themeToggle.innerHTML==="Light"){
+        themeToggle.innerHTML="Dark";
+    }
+    else{
+        themeToggle.innerHTML="Light";   
+    }
+}
 
 
