@@ -94,13 +94,52 @@
         <h1>Your Notes</h1>
         <br>
 
+
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button> -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title" class="col-form-label ">title</label>
+            <input type="text" id="titletxt" class="form-control editTitle" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">text</label>
+            <textarea class="form-control editText" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+
+        <!-- <button id="edit" onclick="editNote(index)" class="btn btn-success editdelete"  data-dismiss="modal">save</a> -->
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
         <div id="notes" class="row container-fluid">
             <div class="notecard my-2 mx-2 card" style="width: 18rem;" id="card">
                 <div class="card-body">
                     <h3 class="card-title">Note</h3>
                     <p class="cardtext" id="target"></p>
-                    <!-- <button id=" ${index1} addbtn" onclick="editNote(this.index1)" class="btn btn-primary">Edit Note</button> -->
-                    <!-- <button id=" ${index} addbtn" onclick="deleteNote(this.index)" class="btn btn-primary">Delete Note</button> -->
+
+                    <!-- <button id=" ${index1} addbtn" onclick="editNote(this.index1)" class="btn btn-primary">Edit Note</button> 
+                     <button id=" ${index} addbtn" onclick="deleteNote(this.index)" class="btn btn-primary">Delete Note</button> -->
+
+        <!-- <button type="button"  id="savebtn" class="btn btn-primary " data-dismiss="modal" >Save</button> -->
                     
 
                 </div>
@@ -108,6 +147,8 @@
         </div>
 
     </div>
+
+    
 
 
     <script src="script.js"></script>
