@@ -53,13 +53,18 @@ function showNotes() {
                 <h3 class="card-title class="contentEdit" id="myh"  onfocusout="myFunction1()">${element.title} </h3>
                 <p class="card-text" id="myp"  onfocusout="myFunction2()" >${element.text}  </p>
  
-                <button id="delete" onclick="deleteNote(${index})" class="btn btn-danger editdelete">Delete Note</a>
-              <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete">Edit Note</a>
+                <button id="delete" onclick="deleteNote(${index})" class="btn btn-danger editdelete">Delete </a>
+
+                <button  class="btn btn-primary editdelete  " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
+                 <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete">Save</a>
+
+              
+
             </div>
         </div>`;
                     //    <button id="edit" onclick="editNote(${index})" class="btn btn-danger">Edit Note</a>
 
-
+            //   <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete">Edit Note</a>
 
     });
     let notesElm = document.getElementById("notes");
@@ -82,10 +87,15 @@ function editNote(index) {
         notesObj = JSON.parse(notes);
     }
     // console.log(notesObj[index].title)
-    let addtxt = document.getElementById("addtxt");
-    let addtitle=document.getElementById("addtitle");
+    // let addtxt = document.getElementById("addtxt");
+    // let addtitle=document.getElementById("addtitle");
+
     // addtitle.value=notesObj[index].title;
 
+    
+
+    let addtxt = document.getElementById("message-text");
+    let addtitle=document.getElementById("titletxt");
     
     let newtitle=addtitle.value;
     let newtext=addtxt.value;
@@ -109,6 +119,57 @@ function editNote(index) {
     showNotes();
 
 }
+
+
+//  let savebtn= document.getElementById("savebtn");
+//     savebtn.addEventListener("onclick",function(e){
+//           console.log("this is saveblock");
+//         localStorage.setItem("notes", JSON.stringify(notesObj));
+//         addtitle.value=""
+//         addtxt.value=""
+//         showNotes();
+//     } )
+
+// function savefuntion(){
+//     console.log("this is save block")
+//     let notes = localStorage.getItem("notes");
+//     if (notes == null) {
+//         notesObj = [];
+//     } else {
+//         notesObj = JSON.parse(notes);
+//     }
+//     // console.log(notesObj[index].title)
+//     // let addtxt = document.getElementById("addtxt");
+//     // let addtitle=document.getElementById("addtitle");
+
+//     // addtitle.value=notesObj[index].title;
+
+    
+
+//     // let addtxt = document.getElementById("message-text");
+//     // let addtitle=document.getElementById("titletxt");
+    
+//     // let newtitle=addtitle.value;
+//     // let newtext=addtxt.value;
+//     // if(newtitle!=""){
+//     //      notesObj[index].title=newtitle;
+//     // }
+//     // if(newtext!=""){
+//     //         notesObj[index].text=newtext;
+
+//     // }
+   
+
+//     // console.log(notesObj[index].title)
+    
+     
+
+//     // notesObj.splice(index, 1);
+//     localStorage.setItem("notes", JSON.stringify(notesObj));
+//     addtitle.value=""
+//     addtxt.value=""
+//     showNotes();
+// }
 
 
 function deleteNote(index) {
