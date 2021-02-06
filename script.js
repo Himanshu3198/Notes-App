@@ -233,22 +233,28 @@ let themeToggle=document.getElementById('theme-toggle');
 themeToggle.addEventListener('click',()=>{
     document.body.classList.toggle('dark');
     localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');
-    // if(darkMode==1){
-    //     themeToggle.innerHTML='Light';
-    // }
-    // else{
-    //     // themeToggle.innerHTML='Dark';
-    // }
+    if( document.getElementById("theme-toggle").innerHTML==="Light"){
+        document.getElementById("theme-toggle").innerHTML="Dark";
+     }
+     else{
+       document.getElementById("theme-toggle").innerHTML="Light";
+     }
+
+    localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');
+
+
 })
 })
-function myFunction12(){
-    let themeToggle=document.getElementById("theme-toggle");
-    if(themeToggle.innerHTML==="Light"){
-        themeToggle.innerHTML="Dark";
-    }
-    else{
-        themeToggle.innerHTML="Light";   
-    }
-}
+
+// let themeToggle=document.getElementById("theme-toggle");
+// function myFunction12(){
+//     let themeToggle=document.getElementById("theme-toggle");
+//     if(themeToggle.innerHTML==="Light"){
+//         themeToggle.innerHTML="Dark";
+//     }
+//     else{
+//         themeToggle.innerHTML="Light";   
+//     }
+// }
 
 
