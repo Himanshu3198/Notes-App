@@ -29,7 +29,7 @@ addbtn.addEventListener("click", function (e) {
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addtxt.value = "";
     addtitle.value="";
-    
+   notesObj.reverse(); 
     showNotes();
 });
 // function to show note from local storage.
@@ -53,10 +53,14 @@ function showNotes() {
                 <h3 class="card-title class="contentEdit" id="myh"  onfocusout="myFunction1()">${element.title} </h3>
                 <p class="card-text" id="myp"  onfocusout="myFunction2()" >${element.text}  </p>
  
-                <button id="delete" onclick="deleteNote(${index})" class="btn btn-danger editdelete">Delete </a>
+                <button id="delete" onclick="deleteNote(${index})" class="btn btn-danger editdelete"><i class="fas fa-trash-alt"></i> </a>
 
-                <button  class="btn btn-primary editdelete  " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
-                 <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete">Save</a>
+                <button  class="btn btn-primary editdelete  " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fas fa-edit"></i>
+
+                </button>
+                 <button id="edit" onclick="editNote(${index})" class="btn btn-success editdelete"><i class="fas fa-save"></i>
+
+                 </a>
 
               
 
